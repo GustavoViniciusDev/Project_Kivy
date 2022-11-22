@@ -1,0 +1,82 @@
+GerenciadorTelas:
+    TelaLogin:
+    TelaCadastro:
+    Tela:
+
+
+
+<Tela>:
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: 'Login'
+            right_action_items: [["menu", lambda x: x]]
+        TelaLogin:
+
+    
+
+
+
+<TelaLogin>:
+    name: 'TelaLogin'
+    MDIconButton:
+        pos_hint: {'center_x': .5, 'center_y': .8}
+        icon: 'account' #tirado do site material icon
+        icon_size: '85sp'
+
+
+
+
+    #campo de Email
+    MDTextField:
+        size_hint_x: .6
+        hint_text: 'Email'
+        pos_hint: {'center_x': .5, 'center_y': .7}
+
+
+
+
+    #campo de Senha
+    MDTextField: 
+        size_hint_x: .6
+        hint_text: 'Senha'
+        pos_hint: {'center_x': .5, 'center_y': .6}
+
+
+
+
+    
+    #campo do botao de logar
+    MDRaisedButton:
+        size_hint_x: .6
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        text: 'Logar'
+        
+
+
+
+
+    MDLabel:
+        pos_hint: {'center_y': .4}
+        halign: 'center'
+        text: 'Esqueceu sua senha?'
+
+
+
+
+    MDTextButton:
+        pos_hint: {'center_x': .5, 'center_y': .3}
+        text: 'Clique Aqui!'
+        on_release: root.abrir_card()
+
+    MDRaisedButton:
+        pos_hint: {'center_x': .5, 'center_y':.2}
+        text:'Cadastrar'
+        on_release: app.root.current = 'TelaCadastro'
+    
+
+
+<TelaCadastro>:
+    name: 'TelaCadastro'
+    MDRaisedButton:
+        text:'Clique em mim'
